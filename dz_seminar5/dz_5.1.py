@@ -1,13 +1,18 @@
-#Напишите программу, которая на вход принимает два числа A и B, 
-#и возводит число А в целую степень B с помощью рекурсии. 
+# Строка представляет собой арифметическое выражение из однозначных чисел и знаков + и -. Вычислите результат.
+# Пример
+# Ввод
+
+# 8-5+2-1
+# Вывод 4
 
 
-def power(base, exp):
-    if (exp == 1):
-        return (base)
-    if (exp != 1):
-        return (base * power(base, exp - 1))
-    
-base = int(input("Введите число: "))
-exp = int(input("Введите его степень: "))
-print("Результат возведения в степень равен:", power(base, exp))
+txt = input()
+result = int(txt[0])
+for i in range(1, len(txt), 2):
+    if txt[i] == '+':
+        result += int(txt[i + 1])
+    elif txt[i] == '-':
+        result -= int(txt[i + 1])
+print(result)
+
+1 
